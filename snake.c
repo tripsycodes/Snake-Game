@@ -89,24 +89,61 @@ void logic()
     }
 }
 
+void GameOver()
+{
+    if (snake_x == 0 || snake_x == Width || snake_y == 0 || snake_y == Height)
+    {
+        system("cls");
+        printf("   _ _ _ _                            _ _ _ _ _     ");
+        printf("\n  |               /\\      |\\    /|   |              ");
+        printf("\n  |              /  \\     | \\  / |   |              ");
+        printf("\n  |             /    \\    |  \\/  |   |_ _ _ _     ");
+        printf("\n  |      _ _   |      |   |      |   |          ");
+        printf("\n  |     |  |   |      |   |      |   |          ");
+        printf("\n  |_ _ _|  |   |      |   |      |   |_ _ _ _ _     ");
+        printf("\n _ _ _ _ _                    _ _ _ _ _     _ _ _ _");
+        printf("\n|         |   \\          /   |             |       |");
+        printf("\n|         |    \\        /    |             |       |");
+        printf("\n|         |     \\      /     |_ _ _ _      |_ _ _ _|");
+        printf("\n|         |      \\    /      |             |     \\ ");
+        printf("\n|         |       \\  /       |             |      \\ ");
+        printf("\n|_ _ _ _ _|        \\/        |_ _ _ _ _    |       \\ ");
+
+        game = 0;
+    }
+}
+
 int main()
 {
-    begin();
-    while (game = 1)
+    while (1)
     {
-        draw();
-        controls();
-        logic();
-        if (snake_x == 0 || snake_x == Width || snake_y == 0 || snake_y == Height)
+        int n;
+        title();
+        scanf("%d", &n);
+        if (n == 1)
         {
-            printf("GAME OVER");
-            game = 0;
-        }
-        for (int m = 0; m < 2000; m++)
-        {
-            for (int n = 0; n < 2000; n++)
+            begin();
+            while (game = 1)
             {
+                draw();
+                controls();
+                logic();
+                GameOver();
+                for (int m = 0; m < 2000; m++)
+                {
+                    for (int n = 0; n < 2000; n++)
+                    {
+                    }
+                }
             }
         }
+        else if (n == 2)
+        {
+            system("cls");
+            printf("\n**** RULES AND REGULATIONS ****");
+            if (kbhit())
+                title();
+        }
     }
+    return 0;
 }
